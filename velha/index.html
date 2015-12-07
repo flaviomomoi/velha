@@ -1,0 +1,997 @@
+﻿<!DOCTYPE HTML> <html lang="pt-br"> 
+   <head>
+     <meta charset="UTF-8">
+	 <link rel="stylesheet" type="text/css" href="velha.css" media="all"/>
+	 <title> JOGO DA VELHA </title>
+   </head>
+<body>
+</body>
+	
+	
+	<section id="fundo" class="fundo">
+		<button id="quad1" class="quad" value="" onclick="quad1(this.id)"></button>
+		<button id="quad2" class="quad" value="" onclick="quad2(this.id)"></button>
+		<button id="quad3" class="fim" value="" onclick="quad3(this.id)"></button>
+		<button id="quad4" class="quad" value="" onclick="quad4(this.id)"></button>
+		<button id="quad5" class="quad" value="" onclick="quad5(this.id)"></button>
+		<button id="quad6" class="fim" value="" onclick="quad6(this.id)"></button>
+		<button id="quad7" class="quad" value="" onclick="quad7(this.id)"></button>
+		<button id="quad8" class="quad" value="" onclick="quad8(this.id)"></button>
+		<button id="quad9" class="fim" value="" onclick="quad9(this.id)"></button>
+	</section><br/>
+	
+	<section id="escolher">
+		<h1 class="escolher"> Escolha Bolinha ou Xizinho </h1>
+		<input class="escolher" type="radio" id="x" name="escolher" value="x"/> x <br/><br/>
+		<input class="escolher" type="radio" id="o" name="escolher" value="o"/> o <br/><br/>
+		<input class="escolher" type="button" onclick="start()" value="Start">
+	</section>
+	
+	<script type="text/javascript">
+	var jogador,maquina;
+	var c11,c12,c13;
+	var c21,c22,c23;
+	var c31,c32,c33;
+	function start()
+	{
+		
+		if(document.getElementById("x").checked)
+		{
+			jogador = "x";
+			maquina = "o";
+			document.getElementById("escolher").style.display="none";
+		}
+		else
+		{
+			jogador = "o";
+			maquina = "x";
+			document.getElementById("escolher").style.display="none";
+		}
+	}
+	
+	function quad1()
+	{
+		if(document.getElementById("x").checked != true && document.getElementById("o").checked != true)
+		{
+			alert("Escolha uma das opções");
+		}
+		else
+		if(document.getElementById("quad1").innerHTML=="")
+		{
+		document.getElementById("quad1").innerHTML = jogador;
+		verifica();
+		}
+	}
+	
+	function quad2()
+	{
+		if(document.getElementById("x").checked != true && document.getElementById("o").checked != true)
+		{
+			alert("Escolha uma das opções");
+		}
+		else
+		if(document.getElementById("quad2").innerHTML=="")
+		{
+		document.getElementById("quad2").innerHTML = jogador;
+		verifica()
+		}
+	}
+	
+	function quad3()
+	{
+		if(document.getElementById("x").checked != true && document.getElementById("o").checked != true)
+		{
+			alert("Escolha uma das opções");
+		}
+		else
+		if(document.getElementById("quad3").innerHTML=="")
+		{
+		document.getElementById("quad3").innerHTML = jogador;
+		verifica();
+		}
+	}
+	
+	function quad4()
+	{
+		if(document.getElementById("x").checked != true && document.getElementById("o").checked != true)
+		{
+			alert("Escolha uma das opções");
+		}
+		else
+		if(document.getElementById("quad4").innerHTML=="")
+		{
+		document.getElementById("quad4").innerHTML = jogador;
+		verifica();
+		}
+	}
+	
+	function quad5()
+	{
+		if(document.getElementById("x").checked != true && document.getElementById("o").checked != true)
+		{
+			alert("Escolha uma das opções");
+		}
+		else
+		if(document.getElementById("quad5").innerHTML=="")
+		{
+		document.getElementById("quad5").innerHTML = jogador;
+		verifica()
+		}
+	}
+	
+	function quad6()
+	{
+		if(document.getElementById("x").checked != true && document.getElementById("o").checked != true)
+		{
+			alert("Escolha uma das opções");
+		}
+		else
+		if(document.getElementById("quad6").innerHTML=="")
+		{
+		document.getElementById("quad6").innerHTML = jogador;
+		verifica()
+		}
+	}
+	
+	function quad7()
+	{
+		if(document.getElementById("x").checked != true && document.getElementById("o").checked != true)
+		{
+			alert("Escolha uma das opções");
+		}
+		else
+		if(document.getElementById("quad7").innerHTML=="")
+		{
+		document.getElementById("quad7").innerHTML = jogador;
+		verifica()
+		}
+	}
+	
+	function quad8()
+	{
+		if(document.getElementById("x").checked != true && document.getElementById("o").checked != true)
+		{
+			alert("Escolha uma das opções");
+		}
+		else
+		if(document.getElementById("quad8").innerHTML=="")
+		{
+		document.getElementById("quad8").innerHTML = jogador;
+		verifica()
+		}
+	}
+	function quad9()
+	{
+		if(document.getElementById("x").checked != true && document.getElementById("o").checked != true)
+		{
+			alert("Escolha uma das opções");
+		}
+		else
+		if(document.getElementById("quad9").innerHTML=="")
+		{
+		document.getElementById("quad9").innerHTML = jogador;
+		verifica()
+		}
+	}
+	
+	function verifica()
+	{
+		c11 = document.getElementById("quad1").innerHTML
+		c12 = document.getElementById("quad2").innerHTML
+		c13 = document.getElementById("quad3").innerHTML
+		
+		c21 = document.getElementById("quad4").innerHTML
+		c22 = document.getElementById("quad5").innerHTML
+		c23 = document.getElementById("quad6").innerHTML
+		
+		c31 = document.getElementById("quad7").innerHTML
+		c32 = document.getElementById("quad8").innerHTML
+		c33 = document.getElementById("quad9").innerHTML
+		
+		
+		
+		/*---------------------------------------------------------------*/
+		
+		/*jogador joga no meio*/
+		if(c11=="" && c12=="" && c13=="" && c21=="" && c22==jogador && c23=="" && c31=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad7").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13=="" && c21=="" && c22==jogador && c23=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad9").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13=="" && c21=="" && c22==jogador && c23=="" && c32==jogador)
+		{
+			document.getElementById("quad2").innerHTML = maquina;
+		}
+		else if(c11==jogador && c13==jogador && c21=="" && c22==jogador && c23=="" && c32==jogador)
+		{
+			document.getElementById("quad6").innerHTML = maquina;
+		}
+		else if(c11==jogador && c13=="" && c21==jogador && c22==jogador && c23=="" && c32==jogador)
+		{
+			document.getElementById("quad6").innerHTML = maquina;
+		}
+		else if(c11==jogador && c13=="" && c21=="" && c22==jogador && c23==jogador && c32==jogador)
+		{
+			document.getElementById("quad4").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13==jogador && c21=="" && c22==jogador && c23=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad9").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13==jogador && c21=="" && c22==jogador && c23=="" && c32==jogador)
+		{
+			document.getElementById("quad2").innerHTML = maquina;
+		}
+		else if(c11==jogador && c13==jogador && c21=="" && c22==jogador && c23=="" && c32==jogador)
+		{
+			document.getElementById("quad4").innerHTML = maquina;
+		}
+		else if(c11=="" && c13==jogador && c21==jogador && c22==jogador && c23=="" && c32==jogador)
+		{
+			document.getElementById("quad6").innerHTML = maquina;
+		}
+		else if(c11=="" && c13==jogador && c21=="" && c22==jogador && c23==jogador && c32==jogador)
+		{
+			document.getElementById("quad4").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13=="" && c21=="" && c22==jogador && c23=="" && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad1").innerHTML = maquina;
+		}
+		else if(c12=="" && c13=="" && c21==jogador && c22==jogador && c23=="" && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad6").innerHTML = maquina;
+		}
+		else if(c12==jogador && c13=="" && c21==jogador && c22==jogador && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad8").innerHTML = maquina;
+		}
+		else if(c12=="" && c13=="" && c21==jogador && c22==jogador && c32==jogador && c33==jogador)
+		{
+			document.getElementById("quad2").innerHTML = maquina;
+		}
+		else if(c12=="" && c13==jogador && c21==jogador && c22==jogador && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad2").innerHTML = maquina;
+		}
+		else if(c11=="" && c12==jogador && c13=="" && c21=="" && c22==jogador && c23=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad8").innerHTML = maquina;
+		}
+		else if(c11=="" && c12==jogador && c13=="" && c21=="" && c22==jogador && c33==jogador)
+		{
+			document.getElementById("quad1").innerHTML = maquina;
+		}
+		else if(c12==jogador && c13=="" && c21==jogador && c22==jogador && c33==jogador)
+		{
+			document.getElementById("quad6").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13=="" && c21==jogador && c22==jogador && c23=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad6").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13=="" && c21==jogador && c22==jogador && c32=="" && c33=="")
+		{
+			document.getElementById("quad9").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13=="" && c21=="" && c22==jogador && c23=="" && c32==jogador && c33=="")
+		{
+			document.getElementById("quad2").innerHTML = maquina;
+		}
+		else if(c11==jogador && c13=="" && c21=="" && c22==jogador && c23=="" && c32==jogador && c33=="")
+		{
+			document.getElementById("quad9").innerHTML = maquina;
+		}
+		else if(c11==jogador && c13==jogador && c21=="" && c22==jogador && c23=="" && c32==jogador)
+		{
+			document.getElementById("quad4").innerHTML = maquina;
+		}
+		else if(c11==jogador && c13=="" && c21==jogador && c22==jogador && c23=="" && c32==jogador)
+		{
+			document.getElementById("quad6").innerHTML = maquina;
+		}
+		else if(c11==jogador && c13=="" && c21=="" && c22==jogador && c23==jogador && c32==jogador)
+		{
+			document.getElementById("quad4").innerHTML = maquina;
+		}
+		else if(c11=="" && c13==jogador && c21=="" && c22==jogador && c23=="" && c32==jogador && c33=="")
+		{
+			document.getElementById("quad1").innerHTML = maquina;
+		}
+		else if(c13==jogador && c21==jogador && c22==jogador && c23=="" && c32==jogador && c33=="")
+		{
+			document.getElementById("quad6").innerHTML = maquina;
+		}
+		else if(c11=="" && c13=="" && c21=="" && c22==jogador && c23==jogador && c32==jogador && c33=="")
+		{
+			document.getElementById("quad4").innerHTML = maquina;
+		}
+		else if(c11==jogador && c13=="" && c22==jogador && c23==jogador && c32==jogador && c33=="")
+		{
+			document.getElementById("quad9").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13=="" && c21=="" && c22==jogador && c23==jogador && c32=="" && c33=="")
+		{
+			document.getElementById("quad4").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13=="" && c22==jogador && c23==jogador && c32=="" && c33=="")
+		{
+			document.getElementById("quad9").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13=="" && c22==jogador && c23==jogador && c32==jogador)
+		{
+			document.getElementById("quad2").innerHTML = maquina;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		/*jogador joga no canto quad1*/
+		else if(c11==jogador && c12=="" && c13=="" && c21=="" && c22=="" && c23=="" && c31=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad5").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13==jogador && c21=="" && c23=="" && c31=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad2").innerHTML = maquina;
+		}
+		else if(c11==jogador && c13==jogador && c21=="" && c23=="" && c31=="" && c32==jogador && c33=="")
+		{
+			document.getElementById("quad4").innerHTML = maquina;
+		}
+		else if(c11==jogador && c13==jogador && c23==jogador && c31=="" && c32==jogador && c33=="")
+		{
+			document.getElementById("quad9").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12==jogador && c13=="" && c21=="" && c23=="" && c31=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad3").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12==jogador && c21=="" && c23=="" && c31==jogador && c32=="" && c33=="")
+		{
+			document.getElementById("quad4").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12==jogador && c23==jogador && c31==jogador && c32=="" && c33=="")
+		{
+			document.getElementById("quad8").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13=="" && c21==jogador && c23=="" && c31=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad7").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13==jogador && c21==jogador && c23=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad2").innerHTML = maquina;
+		}
+		else if(c11==jogador && c13==jogador && c21==jogador && c23=="" && c32==jogador && c33=="")
+		{
+			document.getElementById("quad6").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13=="" && c21=="" && c23=="" && c31==jogador && c32=="" && c33=="")
+		{
+			document.getElementById("quad4").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13=="" && c23==jogador && c31==jogador && c32=="" && c33=="")
+		{
+			document.getElementById("quad8").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12==jogador && c13=="" && c23==jogador && c31==jogador && c33=="")
+		{
+			document.getElementById("quad3").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13=="" && c21=="" && c23==jogador && c31=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad3").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c21=="" && c23==jogador && c31==jogador && c32=="" && c33=="")
+		{
+			document.getElementById("quad4").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c23==jogador && c31==jogador && c32==jogador && c33=="")
+		{
+			document.getElementById("quad9").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13=="" && c21=="" && c23=="" && c31=="" && c32==jogador && c33=="")
+		{
+			document.getElementById("quad4").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13=="" && c23==jogador && c32==jogador && c33=="")
+		{
+			document.getElementById("quad3").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13=="" && c21=="" && c23=="" && c31=="" && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad8").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12==jogador && c13=="" && c21=="" && c23=="" && c31=="" && c33==jogador)
+		{
+			document.getElementById("quad3").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12==jogador && c21=="" && c23=="" && c31==jogador && c33==jogador)
+		{
+			document.getElementById("quad4").innerHTML = maquina;
+		}
+		/*fim do canto quad 1*/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*jogar no canto quad3*/
+		else if(c11=="" && c12=="" && c13==jogador && c21=="" && c22=="" && c23=="" && c31=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad5").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13==jogador && c21=="" && c23=="" && c31=="" && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad6").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13==jogador && c21==jogador && c31=="" && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad2").innerHTML = maquina;
+		}
+		else if(c11=="" && c13==jogador && c21==jogador && c31=="" && c32==jogador && c33==jogador)
+		{
+			document.getElementById("quad7").innerHTML = maquina;
+		}
+		else if(c11=="" && c12==jogador && c13==jogador && c21=="" && c23=="" && c31=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad1").innerHTML = maquina;
+		}
+		else if(c12==jogador && c13==jogador && c21=="" && c23=="" && c31=="" && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad6").innerHTML = maquina;
+		}
+		else if(c12==jogador && c13==jogador && c21==jogador && c31=="" && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad7").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13==jogador && c21=="" && c23==jogador && c31=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad9").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13==jogador && c21=="" && c23==jogador && c31=="" && c32=="")
+		{
+			document.getElementById("quad2").innerHTML = maquina;
+		}
+		else if(c11==jogador && c13==jogador && c21=="" && c23==jogador && c31=="")
+		{
+			document.getElementById("quad4").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13==jogador && c21=="" && c23=="" && c31=="" && c32==jogador && c33=="")
+		{
+			document.getElementById("quad9").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13==jogador && c21=="" && c23=="" && c31=="" && c32==jogador)
+		{
+			document.getElementById("quad4").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13==jogador && c23==jogador && c31=="" && c32==jogador)
+		{
+			document.getElementById("quad2").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13==jogador && c21==jogador && c23=="" && c31=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad2").innerHTML = maquina;
+		}
+		else if(c11=="" && c13==jogador && c21==jogador && c23=="" && c31=="" && c32==jogador && c33=="")
+		{
+			document.getElementById("quad9").innerHTML = maquina;
+		}
+		else if(c11==jogador && c13==jogador && c21==jogador && c23=="" && c31=="" && c32==jogador)
+		{
+			document.getElementById("quad7").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13==jogador && c21=="" && c23=="" && c31==jogador && c32=="" && c33=="")
+		{
+			document.getElementById("quad8").innerHTML = maquina;
+		}
+		else if(c11=="" && c12==jogador && c13==jogador && c23=="" && c31==jogador && c33=="")
+		{
+			document.getElementById("quad1").innerHTML = maquina;
+		}
+		else if(c12==jogador && c13==jogador && c23=="" && c31==jogador && c33==jogador)
+		{
+			document.getElementById("quad6").innerHTML = maquina;
+		}
+		/*fim quad3*/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*jogar no quad7*/
+		else if(c11=="" && c12=="" && c13=="" && c21=="" && c22=="" && c23=="" && c31==jogador && c32=="" && c33=="")
+		{
+			document.getElementById("quad5").innerHTML = maquina;	
+		}
+		else if(c11==jogador && c12=="" && c13=="" && c21=="" && c23=="" && c31==jogador && c32=="" && c33=="")
+		{
+			document.getElementById("quad4").innerHTML = maquina;	
+		}
+		else if(c11=="" && c12=="" && c13=="" && c21=="" && c23=="" && c31==jogador && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad8").innerHTML = maquina;	
+		}
+		else if(c11=="" && c12==jogador && c13=="" && c21=="" && c23=="" && c31==jogador && c33==jogador)
+		{
+			document.getElementById("quad4").innerHTML = maquina;	
+		}
+		else if(c11=="" && c12==jogador && c13=="" && c23==jogador && c31==jogador && c33==jogador)
+		{
+			document.getElementById("quad3").innerHTML = maquina;	
+		}
+		else if(c11=="" && c12=="" && c13=="" && c21=="" && c23=="" && c31==jogador && c32==jogador && c33=="")
+		{
+			document.getElementById("quad9").innerHTML = maquina;	
+		}
+		else if(c11==jogador && c12=="" && c13=="" && c21=="" && c23=="" && c31==jogador && c32==jogador)
+		{
+			document.getElementById("quad4").innerHTML = maquina;	
+		}
+		else if(c11==jogador && c12=="" && c13=="" && c23==jogador && c31==jogador && c32==jogador)
+		{
+			document.getElementById("quad2").innerHTML = maquina;	
+		}
+		else if(c11=="" && c12=="" && c13=="" && c21==jogador && c23=="" && c31==jogador && c32=="" && c33=="")
+		{
+			document.getElementById("quad1").innerHTML = maquina;	
+		}
+		else if(c12=="" && c13=="" && c21==jogador && c23=="" && c31==jogador && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad8").innerHTML = maquina;	
+		}
+		else if(c12==jogador && c13=="" && c21==jogador && c23=="" && c31==jogador && c33==jogador)
+		{
+			document.getElementById("quad3").innerHTML = maquina;	
+		}
+		else if(c11=="" && c12=="" && c13=="" && c21=="" && c23==jogador && c31==jogador && c32=="" && c33=="")
+		{
+			document.getElementById("quad2").innerHTML = maquina;	
+		}
+		else if(c11=="" && c13=="" && c21=="" && c23==jogador && c31==jogador && c32==jogador && c33=="")
+		{
+			document.getElementById("quad9").innerHTML = maquina;	
+		}
+		else if(c11==jogador && c13=="" && c21=="" && c23==jogador && c31==jogador && c32==jogador)
+		{
+			document.getElementById("quad4").innerHTML = maquina;	
+		}
+		else if(c11=="" && c12==jogador && c13=="" && c21=="" && c23=="" && c31==jogador && c32=="" && c33=="")
+		{
+			document.getElementById("quad4").innerHTML = maquina;	
+		}
+		else if(c11=="" && c12==jogador && c13=="" && c23==jogador && c31==jogador && c32=="" && c33=="")
+		{
+			document.getElementById("quad9").innerHTML = maquina;	
+		}
+		else if(c11==jogador && c12==jogador && c13=="" && c23==jogador && c31==jogador && c32=="")
+		{
+			document.getElementById("quad3").innerHTML = maquina;	
+		}
+		/*fim do quad7*/
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*jogar no quad9*/
+		else if(c11=="" && c12=="" && c13=="" && c21=="" && c22=="" && c23=="" && c31=="" && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad5").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13=="" && c21=="" && c23==jogador && c31=="" && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad3").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c21=="" && c23==jogador && c31==jogador && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad8").innerHTML = maquina;
+		}
+		else if(c11=="" && c12==jogador && c21=="" && c23==jogador && c31==jogador && c33==jogador)
+		{
+			document.getElementById("quad4").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13=="" && c21=="" && c23=="" && c31=="" && c32==jogador && c33==jogador)
+		{
+			document.getElementById("quad7").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13==jogador && c21=="" && c23=="" && c32==jogador && c33==jogador)
+		{
+			document.getElementById("quad6").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13==jogador && c21==jogador && c32==jogador && c33==jogador)
+		{
+			document.getElementById("quad2").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13=="" && c21==jogador && c23=="" && c31=="" && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad8").innerHTML = maquina;
+		}
+		else if(c11=="" && c12==jogador && c13=="" && c21==jogador && c23=="" && c31=="" && c33==jogador)
+		{
+			document.getElementById("quad3").innerHTML = maquina;
+		}
+		else if(c11=="" && c12==jogador && c21==jogador && c23=="" && c31==jogador && c33==jogador)
+		{
+			document.getElementById("quad1").innerHTML = maquina;
+		}
+		else if(c11=="" && c12==jogador && c13=="" && c21=="" && c23=="" && c31=="" && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad6").innerHTML = maquina;
+		}
+		else if(c11=="" && c12==jogador && c13=="" && c21==jogador && c31=="" && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad7").innerHTML = maquina;
+		}
+		else if(c11=="" && c12==jogador && c13==jogador && c21==jogador && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad1").innerHTML = maquina;
+		}
+		/*Fim do quad9*/
+		
+		
+		
+		
+		
+		
+		
+		/*jogar no quad2*/
+		else if(c11=="" && c12==jogador && c13=="" && c21=="" && c22=="" && c23=="" && c31=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad5").innerHTML = maquina;
+		}
+		else if(c11=="" && c12==jogador && c13=="" && c21==jogador && c23=="" && c31=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad3").innerHTML = maquina;
+		}
+		else if(c11=="" && c12==jogador && c21==jogador && c23=="" && c31==jogador && c32=="" && c33=="")
+		{
+			document.getElementById("quad1").innerHTML = maquina;
+		}
+		else if(c12==jogador && c21==jogador && c23=="" && c31==jogador && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad8").innerHTML = maquina;
+		}
+		else if(c11=="" && c12==jogador && c13=="" && c21=="" && c23=="" && c31=="" && c32==jogador && c33=="")
+		{
+			document.getElementById("quad1").innerHTML = maquina;
+		}
+		else if(c12==jogador && c13=="" && c21=="" && c23=="" && c31=="" && c32==jogador && c33==jogador)
+		{
+			document.getElementById("quad7").innerHTML = maquina;
+		}
+		else if(c11=="" && c12==jogador && c13=="" && c21=="" && c23==jogador && c31=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad1").innerHTML = maquina;
+		}
+		else if(c12==jogador && c13=="" && c21=="" && c23==jogador && c31=="" && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad3").innerHTML = maquina;
+		}
+		else if(c12==jogador && c21=="" && c23==jogador && c31==jogador && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad8").innerHTML = maquina;
+		}
+		/*fim do quad2*/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*jogar no quad4*/
+		else if(c11=="" && c12=="" && c13=="" && c21==jogador && c22=="" && c23=="" && c31=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad5").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13=="" && c21==jogador && c23==jogador && c31=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad1").innerHTML = maquina;
+		}
+		else if(c12=="" && c13=="" && c21==jogador && c23==jogador && c31=="" && c32=="" && c33==jogador)
+		{
+			document.getElementById("quad3").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13=="" && c21==jogador && c23=="" && c31=="" && c32==jogador && c33=="")
+		{
+			document.getElementById("quad7").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13==jogador && c21==jogador && c23=="" && c32==jogador && c33=="")
+		{
+			document.getElementById("quad9").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13==jogador && c21==jogador && c23=="" && c32==jogador)
+		{
+			document.getElementById("quad2").innerHTML = maquina;
+		}
+		/*fim do quad4*/
+		
+		
+		
+		
+		
+		
+		
+		
+		/*jogar no quad8*/
+		else if(c11=="" && c12=="" && c13=="" && c21=="" && c22=="" && c23=="" && c31=="" && c32==jogador && c33=="")
+		{
+			document.getElementById("quad5").innerHTML = maquina;
+		}
+		else if(c11=="" && c12=="" && c13=="" && c21=="" && c23==jogador && c31=="" && c32==jogador && c33=="")
+		{
+			document.getElementById("quad9").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13=="" && c21=="" && c23==jogador && c31=="" && c32==jogador)
+		{
+			document.getElementById("quad7").innerHTML = maquina;
+		}
+		else if(c11==jogador && c12=="" && c13==jogador && c21=="" && c23==jogador && c32==jogador)
+		{
+			document.getElementById("quad2").innerHTML = maquina;
+		}
+		/*fim do quad 8*/
+		
+		
+		
+		
+		
+		/*jogar no quad6*/
+		else if(c11=="" && c12=="" && c13=="" && c21=="" && c22=="" && c23==jogador && c31=="" && c32=="" && c33=="")
+		{
+			document.getElementById("quad5").innerHTML = maquina;
+		}
+		/*fim do quad6*/
+		
+		
+		
+		else if(c11==c12 && c11==maquina && c13=="")
+		{
+			document.getElementById("quad3").innerHTML = maquina;
+		}
+		else if(c21==c22 && c21==maquina && c23=="")
+		{
+			document.getElementById("quad6").innerHTML = maquina;
+		}
+		else if(c31==c32 && c31==maquina && c33=="")
+		{
+			document.getElementById("quad9").innerHTML = maquina;
+		}
+		
+		
+		else if(c12==c13 && c12==maquina && c11=="")
+		{
+			document.getElementById("quad1").innerHTML = maquina;
+		}
+		else if(c22==c23 && c22==maquina && c21=="")
+		{
+			document.getElementById("quad4").innerHTML = maquina;
+		}
+		else if(c32==c33 && c32==maquina && c31=="")
+		{
+			document.getElementById("quad7").innerHTML = maquina;
+		}
+		
+		
+		else if(c11==c13 && c11==maquina && c12=="")
+		{
+			document.getElementById("quad2").innerHTML = maquina;
+		}
+		else if(c21==c23 && c21==maquina && c22=="")
+		{
+			document.getElementById("quad5").innerHTML = maquina;
+		}
+		else if(c31==c33 && c31==maquina && c32=="")
+		{
+			document.getElementById("quad8").innerHTML = maquina;
+		}
+		
+		
+		else if(c11==c21 && c11==maquina && c31=="")
+		{
+			document.getElementById("quad7").innerHTML = maquina;
+		}
+		else if(c12==c22 && c12==maquina && c32=="")
+		{
+			document.getElementById("quad8").innerHTML = maquina;
+		}
+		else if(c13==c23 && c13==maquina && c33=="")
+		{
+			document.getElementById("quad9").innerHTML = maquina;
+		}
+		
+		
+		else if(c21==c31 && c21==maquina && c11=="")
+		{
+			document.getElementById("quad1").innerHTML = maquina;
+		}
+		else if(c22==c32 && c22==maquina && c12=="")
+		{
+			document.getElementById("quad2").innerHTML = maquina;
+		}
+		else if(c23==c33 && c23==maquina && c13=="")
+		{
+			document.getElementById("quad3").innerHTML = maquina;
+		}
+		
+		
+		else if(c11==c31 && c11==maquina && c21=="")
+		{
+			document.getElementById("quad4").innerHTML = maquina;
+		}
+		else if(c12==c32 && c12==maquina && c22=="")
+		{
+			document.getElementById("quad5").innerHTML = maquina;
+		}
+		else if(c13==c33 && c13==maquina && c23=="")
+		{
+			document.getElementById("quad6").innerHTML = maquina;
+		}
+		
+		
+		
+		else if(c11==c22 && c11==maquina && c33=="")
+		{
+			document.getElementById("quad9").innerHTML = maquina;
+		}
+		else if(c22==c33 && c22==maquina && c11=="")
+		{
+			document.getElementById("quad1").innerHTML = maquina;
+		}
+		else if(c11==c33 && c11==maquina && c22=="")
+		{
+			document.getElementById("quad5").innerHTML = maquina;
+		}
+		
+		
+		else if(c13==c22 && c13==maquina && c31=="")
+		{
+			document.getElementById("quad7").innerHTML = maquina;
+		}
+		else if(c22==c31 && c22==maquina && c13=="")
+		{
+			document.getElementById("quad3").innerHTML = maquina;
+		}
+		else if(c13==c31 && c13==maquina && c22=="")
+		{
+			document.getElementById("quad5").innerHTML = maquina;
+		}
+		
+		
+		
+		
+		ganhar();
+	}
+	
+	function ganhar()
+	{
+		c11 = document.getElementById("quad1").innerHTML
+		c12 = document.getElementById("quad2").innerHTML
+		c13 = document.getElementById("quad3").innerHTML
+		
+		c21 = document.getElementById("quad4").innerHTML
+		c22 = document.getElementById("quad5").innerHTML
+		c23 = document.getElementById("quad6").innerHTML
+		
+		c31 = document.getElementById("quad7").innerHTML
+		c32 = document.getElementById("quad8").innerHTML
+		c33 = document.getElementById("quad9").innerHTML
+		
+		if(c11==c12 && c12==c13 && c11==jogador)
+		{
+			alert("Parábens Você Ganho");
+			document.location.reload();
+		}
+		else if(c21==c22 && c22==c23 && c21==jogador)
+		{
+			alert("Parábens Você Ganho")
+			document.location.reload();
+		}
+		else if(c31==c32 && c32==c33 && c31==jogador)
+		{
+			alert("Parábens Você Ganho")
+			document.location.reload();
+		}
+		else if(c11==c21 && c21==c31 && c11==jogador)
+		{
+			alert("Parábens Você Ganho")
+			document.location.reload();
+		}
+		else if(c12==c22 && c22==c32 && c12==jogador)
+		{
+			alert("Parábens Você Ganho")
+			document.location.reload();
+		}
+		else if(c13==c23 && c23==c33 && c13==jogador)
+		{
+			alert("Parábens Você Ganho")
+			document.location.reload();
+		}
+		else if(c11==c22 && c22==c33 && c11==jogador)
+		{
+			alert("Parábens Você Ganho")
+			document.location.reload();
+		}
+		else if(c13==c22 && c22==c31 && c13==jogador)
+		{
+			alert("Parábens Você Ganho")
+			document.location.reload();
+		}
+		else if(c11==c12 && c12==c13 && c11==maquina)
+		{
+			alert("Parábens Você Perdeu");
+			document.location.reload();
+		}
+		else if(c21==c22 && c22==c23 && c22==maquina)
+		{
+			alert("Parábens Você Perdeu")
+			document.location.reload();
+		}
+		else if(c31==c32 && c32==c33 && c31==maquina)
+		{
+			alert("Parábens Você Perdeu")
+			document.location.reload();
+		}
+		else if(c11==c21 && c21==c31 && c11==maquina)
+		{
+			alert("Parábens Você Perdeu")
+			document.location.reload();
+		}
+		else if(c12==c22 && c22==c32 && c12==maquina)
+		{
+			alert("Parábens Você Perdeu")
+			document.location.reload();
+		}
+		else if(c13==c23 && c23==c33 && c13==maquina)
+		{
+			alert("Parábens Você Perdeu")
+			document.location.reload();
+		}
+		else if(c11==c22 && c22==c33 && c11==maquina)
+		{
+			alert("Parábens Você Perdeu")
+			document.location.reload();
+		}
+		else if(c13==c22 && c22==c31 && c13==maquina)
+		{
+			alert("Parábens Você Perdeu")
+			document.location.reload();
+		}
+		else if(c11!="" && c12!="" && c13!="" && c21!="" && c22!="" && c23!="" && c31!="" && c32!="" && c33!="")
+		{
+			alert("Empate")
+			document.location.reload();
+		}
+	}
+	</script>
+</html>
