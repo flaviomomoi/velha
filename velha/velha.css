@@ -1,9 +1,15 @@
+body{
+	background:;
+}
+
 .fundo
 {
-	margin: 0 auto;
-	width: 30%;
-	height: 340px;
+	float: left;
+	width: 75%;
+	height:	300px;
+	margin-left: 12.5%;
 	background: blue;
+
 }
 
 .quad
@@ -11,9 +17,11 @@
 	float: left;
 	background: red;
 	width: 30%;
-	height: 100px;
-	margin: 10px 1% 0px 2.5%;
-	font-size: 2em;
+	height: 30%;
+	margin: 2.5% 1.5% 1% 2%;
+	font-size: 1em;
+
+
 }
 
 .fim
@@ -21,13 +29,17 @@
 	float: left;
 	background: red;
 	width: 30%;
-	height: 100px;
-	margin: 10px 0% 0px 1%;
-	font-size: 2em;
+	height: 30%;
+	margin: 2.5% 1.5% 1% 1.5%;
+	font-size: 1em;
+
 }
 
 #escolher
 {
+	float: left;
+	width: 50%;
+	margin-left: 25%;
 	margin: 0  0 0 30%;
-	font-size: 1.3em;
+	font-size: 1em;
 }
